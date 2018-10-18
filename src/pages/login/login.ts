@@ -3,16 +3,20 @@ import {NavController, NavParams, AlertController, ToastController, MenuControll
 import {HomePage} from "../home/home";
 import {RegisterPage} from "../register/register";
 import { RestProvider } from '../../services/rest/rest';
+import { Facebook } from '@ionic-native/facebook';
 
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html'
 })
 export class LoginPage {
+  user: any = {};
+  showUser: boolean = false;
   responseData : any;
   userData = {"username": "","password": ""};
   
-  constructor(public nav: NavController, public navParams: NavParams, public forgotCtrl: AlertController, public menu: MenuController, public restProvider:RestProvider, public toastCtrl: ToastController) {
+  constructor(public nav: NavController, public navParams: NavParams, public forgotCtrl: AlertController, public menu: MenuController, public restProvider:RestProvider, public toastCtrl: ToastController,private facebook: Facebook
+    ) {
     this.menu.swipeEnable(false);
   }
 
@@ -91,5 +95,30 @@ export class LoginPage {
       duration: 2000
     });
     toast.present();
+  }
+
+  loginFacebook(){
+    this.facebook.login(['public_profile', 'email'])
+    .then(rta => {
+      console.log(rta.status);
+      if(rta.status == 'connected'){
+        this.getInfo();
+      };
+    })
+    .catch(error =>{
+      console.error( error );
+    });
+  }
+
+  getInfo(){
+    this.facebook.api('/me?fields=id,name,email,first_name,picture,last_name,gender',['public_profile','email'])
+    .then(data=>{
+      console.log(data);
+      this.showUser = true; 
+      this.user = data;
+    })
+    .catch(error =>{
+      console.error( error );
+    });
   }
 }

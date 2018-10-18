@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.ionicframework.ionicstartheme" version="0.0.3" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.cazalibros.info" version="0.0.3" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Caza Libros</name>
     <description>Busca libros gratis por la  comudidad</description>
     <author email="jmono280@gmail.com" href="#">E-mail</author>
@@ -92,4 +92,9 @@
     <plugin name="ionic-plugin-keyboard" spec="^2.2.1" />
     <plugin name="cordova-plugin-splashscreen" spec="^5.0.2" />
     <plugin name="cordova-sqlite-storage" spec="^2.1.5" />
+    <plugin name="cordova-plugin-facebook4" spec="^3.1.0">
+        <variable name="APP_ID" value="277883076176139" />
+        <variable name="APP_NAME" value="Caza Libros" />
+        <variable name="FACEBOOK_ANDROID_SDK_VERSION" value="4.37.0" />
+    </plugin>
 </widget>

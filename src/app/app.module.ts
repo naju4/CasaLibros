@@ -28,6 +28,7 @@ import { RestProvider } from '../services/rest/rest';
 import { CommonProvider } from '../services/common/common';
 import { LinkyModule } from 'angular-linky';
 import { MomentModule } from 'angular2-moment';
+import { Facebook } from "@ionic-native/facebook";
 
 // import services
 // end import services
@@ -86,7 +87,8 @@ import { MomentModule } from 'angular2-moment';
     TripService,
     WeatherProvider,
     RestProvider,
-    CommonProvider
+    CommonProvider,
+    Facebook
   ]
 })
 
