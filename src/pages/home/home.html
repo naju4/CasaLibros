@@ -1,0 +1,69 @@
+<!-- -->
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      <strong>Ionic 3</strong> Start Theme
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button tappable (click)="presentNotifications($event)">
+        <ion-icon name="notifications"></ion-icon>
+      </button>
+      <button ion-button tappable (click)="goToAccount()">
+        <ion-icon name="cog"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="animated fadeIn common-bg">
+
+
+  
+  <h2>Bienvenido {{userDetails.name}}</h2>
+  <ion-card no-margin margin-bottom class="full-width">
+    <ion-item tappable (click)="choosePlace('from')" class="border-bottom">
+      <ion-icon name="search" color="primary" item-left></ion-icon>
+      <span>{{ search.name }}</span>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="md-calendar" color="primary" item-left></ion-icon>
+      <ion-datetime class="no-pl" displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" [(ngModel)]="search.date"></ion-datetime>
+    </ion-item>
+  </ion-card>
+
+  <button ion-button icon-start block no-margin color="primary" class="round" tappable (click)="doSearch()">
+    <ion-icon name="search"></ion-icon> Search
+  </button>
+      
+  <ion-item id="udpateBox">
+    <ion-item>
+      <ion-textarea [(ngModel)]="userPostData.feed" placeholder="Ingrese un nuevo comentario"></ion-textarea>
+    </ion-item>
+    <ion-row>
+      <button ion-button block icon-left color="terciary" (click)="feedUpdate()" class="button button-positive">
+        <ion-icon name="add-circle" icon-right></ion-icon>
+      </button>
+    </ion-row>
+  </ion-item>
+    
+  <ion-card *ngFor="let item of dataSet; let msgIndex = index">
+    <ion-item>
+      <ion-icon name="trash" item-right (click)="feedDelete(item.feed_id, msgIndex)"></ion-icon>
+      <ion-card-content>
+        <p [innerHTML]="item.feed | linky"></p>
+        <span>{{this.convertTime(item.created) | amCalendar}}</span>
+      </ion-card-content>
+    </ion-item>
+  </ion-card>
+  <ion-row>
+    <button ion-button icon-left color="terciary" (click)="logout()" class="button button-positive">
+      <ion-icon name="close-circle" icon-right></ion-icon>
+      Salir
+    </button>
+  </ion-row>    
+</ion-content>
+
+
