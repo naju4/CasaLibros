@@ -1,8 +1,8 @@
 {
-  "name": "ionic3-start-theme",
-  "version": "0.0.3",
-  "author": "João Firmino <firminoata@gmail.com>",
-  "homepage": "https://market.ionicframework.com/themes/ionic3-start-theme",
+  "name": "caza-libros",
+  "version": "0.0.1",
+  "author": "caza-libros>",
+  "homepage": "https://google.com.co",
   "scripts": {
     "clean": "ionic-app-scripts clean",
     "build": "ionic-app-scripts build",
