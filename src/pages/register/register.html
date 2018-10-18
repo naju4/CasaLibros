@@ -6,18 +6,18 @@
     <div padding text-center>
       <div class="logo"></div>
       <h2 ion-text class="text-primary">
-        <strong>Ionic 3</strong> Start Theme
+        <strong>Caza</strong> Libros 
       </h2>
     </div>
 
     <!-- Login form -->
-    <form class="list-form">
+    <!--<form class="list-form">-->
       <ion-item>
         <ion-label floating>
           <ion-icon name="person" item-start class="text-primary"></ion-icon>
-          Full Name
+          Nombre
         </ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-input type="text" [(ngModel)]="userData.name"></ion-input>
       </ion-item>
 
       <ion-item>
@@ -25,40 +25,43 @@
           <ion-icon name="mail" item-start class="text-primary"></ion-icon>
           Email
         </ion-label>
-        <ion-input type="email"></ion-input>
+        <ion-input type="email" [(ngModel)]="userData.email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="mail" item-start class="text-primary"></ion-icon>
+          Nombre de Usuario
+        </ion-label>
+        <ion-input type="email" [(ngModel)]="userData.username"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label floating>
           <ion-icon name="lock" item-start class="text-primary"></ion-icon>
-          Password
+          Contraseña
         </ion-label>
-        <ion-input type="password"></ion-input>
+        <ion-input type="password" [(ngModel)]="userData.password"></ion-input>
       </ion-item>
-    </form>
+    <!--</form>-->
 
     <div margin-top>
       <button ion-button block color="dark" tappable (click)="register()">
-        SIGN UP
+        Aceptar
       </button>
 
-      <p text-center ion-text color="secondary">Or Sign Up with:</p>
+      <p text-center ion-text color="secondary">Ó inicie sesión con redes sociales:</p>
 
       <ion-grid>
         <ion-row>
-          <ion-col col-4>
+          <ion-col col-6>
             <button ion-button icon-only block class="btn-facebook">
               <ion-icon name="logo-facebook"></ion-icon>
             </button>
           </ion-col>
-          <ion-col col-4>
-            <button ion-button icon-only block class="btn-twitter">
-              <ion-icon name="logo-twitter"></ion-icon>
-            </button>
-          </ion-col>
-          <ion-col col-4>
+          <ion-col col-6>
             <button ion-button icon-only block class="btn-gplus">
-              <ion-icon name="logo-googleplus"></ion-icon>
+              <ion-icon name="logo-instagram"></ion-icon>
             </button>
           </ion-col>
         </ion-row>
@@ -67,7 +70,7 @@
 
     <!-- Other links -->
     <div text-center margin-top>
-      <span ion-text color="primary" tappable (click)="login()">I have an account</span>
+      <span ion-text color="primary" tappable (click)="login()">Login</span>
     </div>
 
   </div>

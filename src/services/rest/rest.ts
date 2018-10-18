@@ -5,6 +5,7 @@ import 'rxjs/add/operator/map';
 
 
 let apiUrl = 'http://localhost/ApiSlim/api/';
+//let apiUrl = 'http://192.168.1.60/ApiSlim/api/';
 
 /*
   Generated class for the RestProvider provider.
@@ -31,6 +32,20 @@ export class RestProvider {
     });
   }
 
+  saveUser(credentials, type){
+    //const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    //const options = { headers: headers };
+    return new Promise((resolve, reject) => {
+      this.http.post(apiUrl+type, JSON.stringify(credentials)).subscribe(res => {
+        this.presentToast("ok");
+        resolve(res);
+      }, (err) => {
+        this.presentToast("Error insertando datos");
+        reject(err);
+    });
+    });
+  }
+  
   presentToast(msg) {
     let toast = this.toastCtrl.create({
       message: msg,

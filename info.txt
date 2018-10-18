@@ -1,3 +1,9 @@
+Node version: v8.12.0
+
+Cordova version: 8.1.0
+
+Config.xml file: 
+
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.ionicframework.ionicstartheme" version="0.0.3" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Caza Libros</name>
@@ -83,13 +89,74 @@
         <param name="ios-package" onload="true" value="CDVStatusBar" />
     </feature>
     <preference name="SplashShowOnlyFirstTime" value="false" />
-    <engine name="ios" spec="^4.4.0" />
-    <engine name="android" spec="6.4.0" />
-    <plugin name="cordova-plugin-console" spec="^1.1.0" />
-    <plugin name="cordova-plugin-device" spec="^2.0.2" />
-    <plugin name="cordova-plugin-statusbar" spec="^2.4.2" />
-    <plugin name="cordova-plugin-whitelist" spec="^1.3.3" />
+    <plugin name="cordova-plugin-console" spec="^1.0.7" />
+    <plugin name="cordova-plugin-device" spec="^1.1.6" />
+    <plugin name="cordova-plugin-splashscreen" spec="^4.0.3" />
+    <plugin name="cordova-plugin-statusbar" spec="^2.2.3" />
+    <plugin name="cordova-plugin-whitelist" spec="^1.3.2" />
     <plugin name="ionic-plugin-keyboard" spec="^2.2.1" />
-    <plugin name="cordova-plugin-splashscreen" spec="^5.0.2" />
-    <plugin name="cordova-sqlite-storage" spec="^2.1.5" />
+    <plugin name="cordova-sqlite-storage" spec="~2.1.4" />
+    <engine name="ios" spec="^4.4.0" />
+    <engine name="android" spec="7.1.1" />
 </widget>
+
+
+Plugins: 
+
+cordova-plugin-console,cordova-plugin-device,cordova-plugin-splashscreen,cordova-plugin-statusbar,cordova-plugin-whitelist,cordova-sqlite-storage,ionic-plugin-keyboard
+
+Android platform:
+
+**************************************************************************
+The "android" command is deprecated.
+For manual SDK, AVD, and project management, please use Android Studio.
+For command-line tools, use tools\bin\sdkmanager.bat
+and tools\bin\avdmanager.bat
+**************************************************************************
+
+Invoking "C:\Users\useringd3\AppData\Local\Android\Sdk\tools\bin\avdmanager" list target
+
+Loading local repository...                                                     [=========                              ] 25% Loading local repository...       [=========                              ] 25% Fetch remote repository...        [=========                              ] 25% Fetch remote repository...        [=========                              ] 25% Fetch remote repository...        [=======================================] 100% Fetch remote repository...       Available Android targets:
+----------
+id: 1 or "android-19"
+     Name: Android API 19
+     Type: Platform
+     API level: 19
+     Revision: 4
+----------
+id: 2 or "android-21"
+     Name: Android API 21
+     Type: Platform
+     API level: 21
+     Revision: 2
+----------
+id: 3 or "android-22"
+     Name: Android API 22
+     Type: Platform
+     API level: 22
+     Revision: 2
+----------
+id: 4 or "android-23"
+     Name: Android API 23
+     Type: Platform
+     API level: 23
+     Revision: 3
+----------
+id: 5 or "android-25"
+     Name: Android API 25
+     Type: Platform
+     API level: 25
+     Revision: 3
+----------
+id: 6 or "android-26"
+     Name: Android API 26
+     Type: Platform
+     API level: 26
+     Revision: 2
+----------
+id: 7 or "android-27"
+     Name: Android API 27
+     Type: Platform
+     API level: 27
+     Revision: 3
+
